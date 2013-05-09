@@ -2,31 +2,22 @@ package uk.ac.shu.webarch.eregister
 
 class Student {
 
-  String fullStudentName
-  String studentNumber
-  String notes
+	
+	String studentID
+	String studentName
+	String learningCentreNumber
+	Course course
+	Long height
 
-  
-  Set courses
+	Set classes
+	Set attendances
 
+	static mappedBy = [attendances:'studentID', classes: 'studentID']
+	static hasMany = [attendances:RegEntry, classes:Enrollment]
 
-  Set classAtts
+    static constraints = {
 
- 
-  static hasMany = [
-    courses: Enrollment,
-    classAtts: RegisterEntry
-  ]
-
-  static mappedBy = [
-    courses:'student',
-    classAtts:'student'
-  ]
-
- 
-  static constraints = {
-    fullStudentName(nullable:false, blank:false,maxSize:256);
-    studentNumber(nullable:false, blank:false,maxSize:256);
-  }
+	studentID unique: true
+    }
 }
 

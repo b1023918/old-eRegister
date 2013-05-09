@@ -1,29 +1,20 @@
 package uk.ac.shu.webarch.eregister
 
-
 class Instructor {
 
+	String staffName
+	String staffNumber
+	String faculty
+	
+	
 
 
-  String fullInstructorName
-  String instructorNumber
-String fullStudentNumber
-String name
-String staffID
+	static mappedBy = [classes:'staffNumber']
+	static hasMany = [classes:RegClass]
 
-  
-  Set classes
-
-  
-  static hasMany = [classes: RegClass]
-
- 
-  static mappedBy = [classes: 'classInstructor']
- 
-  
-  static constraints = {
-    name(nullable:false, blank:false,maxSize:256);
-    staffId(nullable:false, blank:false,maxSize:20);
-  }
+    static constraints = {
+	
+	staffNumber unique: true
+    }
 }
 

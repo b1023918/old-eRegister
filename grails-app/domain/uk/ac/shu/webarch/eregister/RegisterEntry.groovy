@@ -1,23 +1,13 @@
 package uk.ac.shu.webarch.eregister
 
+class RegEntry {
 
-class RegisterEntry {
+	Student studentID	
+	RegSheet sheetNumber
+	Date ts = new Date()
+	
 
-  
-  Student student
-
- 
-  Long timestamp
-
-  
-  static constraints = {
-    timestamp(nullable:false, blank:false);
-  }
-
- 
-  static mapping = {
-    table 'student_register_entry'
-    student column: 'student_fk'
-  }
+    static constraints = {
+    }
 }
 

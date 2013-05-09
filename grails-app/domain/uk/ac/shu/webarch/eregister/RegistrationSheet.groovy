@@ -1,29 +1,16 @@
 package uk.ac.shu.webarch.eregister
 
-class RegistrationSheet {
+class RegSheet {
+	
+	String sheetNumber
+	String classDate
+	RegClass className
+	
+	static mappedBy = [classes:'sheetNumber']
+	static hasMany = [classes:RegEntry]
+	
 
-
-  Course course
-
-
-  Date sheetDate
-
-
-  Set signatories
-
-
-  String notes
-
- 
-
-  static constraints = {
-    course(nullable:false, blank:false);
-    sheetDate(nullable:false, blank:false);
-    notes(nullable:true, blank:true);
-  }
-
-  static mapping = {
-    notes column: 'course_desc', type:'text'
-  }
+    static constraints = {
+    }
 }
 
