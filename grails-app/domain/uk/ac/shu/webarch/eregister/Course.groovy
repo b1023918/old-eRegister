@@ -4,9 +4,11 @@ package uk.ac.shu.webarch.eregister
 
 class Course {
   
-  String courseName
   String courseCode
+  String courseName
   String description
+  String mappedCourseCode
+  String courseDesc
 
 
   Set classes

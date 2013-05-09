@@ -1,5 +1,10 @@
 package uk.ac.shu.webarch.eregister
 
+/*
+ * A Class. 
+ * We called the class RegClass to avoid reserved word clashes with the java keyword "class"
+ *
+ * This class has a name, and a foreign key to the instructor who teaches this class. This is the 1 sideyyyy
  
 class RegClass {
 

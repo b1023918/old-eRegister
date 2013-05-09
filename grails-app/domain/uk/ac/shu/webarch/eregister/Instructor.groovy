@@ -5,8 +5,11 @@ class Instructor {
 
 
 
-  String name
-  String staffId
+  String fullInstructorName
+  String instructorNumber
+String fullStudentNumber
+String name
+String staffID
 
   
   Set classes
