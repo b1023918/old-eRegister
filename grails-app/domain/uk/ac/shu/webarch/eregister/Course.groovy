@@ -1,17 +1,27 @@
 package uk.ac.shu.webarch.eregister
 
+
+
 class Course {
+  
+  String courseName
+  String courseCode
+  String description
 
-	String courseName
-	String courseNumber
-	Instructor courseLeader
-	String faculty
 
-	static mappedBy = [classes:'courseNumber']
-	static hasMany = [classes:RegClass]
+  Set classes
 
-    static constraints = {
+  static constraints = {
+    courseCode maxSize: 20
+  }
 
-	courseNumber unique: true
-    }
+  static hasMany = [classes: RegClass]
+  static mappedBy = [classes: 'course']
+  static mapping = {
+    table 'course'
+    courseName column: 'course_name'
+    courseCode column: 'mapped_course_code'
+    description column: 'course_desc', type:'text'
+  }
 }
+

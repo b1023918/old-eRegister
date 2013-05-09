@@ -2,18 +2,16 @@ package uk.ac.shu.webarch.eregister
 
 class Enrollment {
 
+  Student student
+  Course course
 
-    String enrollmentNo
-	Student studentID
-	RegClass className
-	String studentContactDetails
+  static constraints = {
+  }
 
-
-
-
-
-    static constraints = {
-
-	enrollmentNo unique: true
-    }
+  static mapping = {
+    table 'course_student'
+    student column: 'student_fk'
+    course column: 'course_fk'
+  }
 }
+
